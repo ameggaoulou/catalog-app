@@ -1,28 +1,34 @@
 <template>
-  <div>
+  <div class="app-container">
     <AppHeader />
-    <AppHero />
-    <AppCatalog />
+    <div class="content">
+      <router-view />
+    </div>
     <AppFooter />
   </div>
 </template>
 
 <script>
 import AppHeader from '@/components/AppHeader.vue';
-import AppHero from '@/components/AppHero.vue';
-import AppCatalog from '@/components/AppCatalog.vue';
 import AppFooter from '@/components/AppFooter.vue';
 
 export default {
   components: {
     AppHeader,
-    AppHero,
-    AppCatalog,
     AppFooter,
   },
 };
 </script>
 
 <style>
-/* Add global styles here */
+/* Ensures the footer stays at the bottom */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
 </style>

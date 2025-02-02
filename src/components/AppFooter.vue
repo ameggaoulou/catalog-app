@@ -8,18 +8,14 @@
           <p>Phone: 555-555-5555</p>
           <p>Location: Casablanca, 06 MA</p>
         </div>
-        <div class="col-md-4 mb-4">
-          <h5>Hours</h5>
-          <p>Monday - Friday: 9:00am – 10:00pm</p>
-          <p>Saturday: 9:00am – 6:00pm</p>
-          <p>Sunday: 9:00am – 12:00pm</p>
-        </div>
-        <div class="col-md-4 mb-4">
-          <h5>Follow Us</h5>
-          <div class="social-icons">
-            <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+        <div class="col-md-4 mb-4 d-flex justify-content-end">
+          <div>
+            <h5>Follow Us</h5>
+            <div class="social-icons">
+              <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+            </div>
           </div>
         </div>
       </div>

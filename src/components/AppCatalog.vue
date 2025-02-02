@@ -1,17 +1,23 @@
 <template>
-  <section class="catalog-section py-5">
+  <section id="products" class="catalog-section py-5 bg-light">
     <div class="container">
-      <h2 class="text-center mb-5">Our Products</h2>
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="catalog-title">Print perfection</h2>
+          <h3 class="catalog-subtitle">Elevate your brand with stunning prints!</h3>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-4 mb-4" v-for="product in products" :key="product.id">
-          <div class="card h-100">
-            <img :src="product.image" class="card-img-top" :alt="product.name">
-            <div class="card-body">
-              <h5 class="card-title">{{ product.name }}</h5>
-              <p class="card-text">{{ product.description }}</p>
-              <a href="#" class="btn btn-primary">Learn More</a>
+          <router-link :to="product.link" class="catalog-item">
+            <div class="catalog-item-image">
+              <img :src="product.image" :alt="product.name" class="img-fluid">
             </div>
-          </div>
+            <div class="catalog-item-content">
+              <h4 class="catalog-item-title">{{ product.name }}</h4>
+              <p class="catalog-item-description">{{ product.description }}</p>
+            </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -26,23 +32,25 @@ export default {
       products: [
         {
           id: 1,
-          name: 'Business Cards',
-          description: 'High-quality business cards for your professional needs.',
-          image: 'https://via.placeholder.com/300',
+          name: 'Custom logos',
+          description: 'Elevate your brand with a unique logo design.',
+          image: 'https://cdn.b12.io/client_media/De0iDF3R/77eb7242-dce2-11ef-9315-0242ac110002-jpg-regular_image.jpeg',
+          link: '/products/logos', // Updated to use Vue Router path
         },
         {
           id: 2,
-          name: 'Flyers',
-          description: 'Eye-catching flyers for promotions and events.',
-          image: 'https://via.placeholder.com/300',
+          name: 'Vibrant posters',
+          description: 'Capture attention with stunning, vibrant posters.',
+          image: 'https://cdn.b12.io/client_media/De0iDF3R/775698c0-dce2-11ef-9315-0242ac110002-jpg-regular_image.jpeg',
+          link: '/products/posters', // Updated to use Vue Router path
         },
         {
           id: 3,
-          name: 'Posters',
-          description: 'Large format posters for advertising and decoration.',
-          image: 'https://via.placeholder.com/300',
+          name: 'Eye-Catching banners',
+          description: 'Promote your message with custom, durable banners.',
+          image: 'https://cdn.b12.io/client_media/De0iDF3R/779e44f4-dce2-11ef-9315-0242ac110002-jpg-regular_image.jpeg',
+          link: '/products/banners', // Updated to use Vue Router path
         },
-        // Add more products here
       ],
     };
   },
@@ -51,9 +59,79 @@ export default {
 
 <style scoped>
 .catalog-section {
-  background-color: #fff;
+  background-color: #f8f9fa;
+  padding: 100px 0;
 }
-.card {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+.catalog-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.catalog-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.catalog-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catalog-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.catalog-item-image img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+}
+
+.catalog-item-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.catalog-item-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.catalog-item-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .catalog-title {
+    font-size: 2rem;
+  }
+
+  .catalog-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .catalog-item-title {
+    font-size: 1.3rem;
+  }
+
+  .catalog-item-description {
+    font-size: 0.9rem;
+  }
 }
 </style>

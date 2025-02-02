@@ -3,11 +3,11 @@
     <div class="container d-flex justify-content-between align-items-center">
       <h1 class="m-0 text-dark" style="font-size: 2rem;">ISSAM PRINT SHOP</h1>
       <nav>
-        <a href="#" class="text-dark me-4">Home</a>
-        <a href="#" class="text-dark me-4">About</a>
-        <a href="#" class="text-dark me-4">Products</a>
-        <a href="#" class="text-dark me-4">Gallery</a>
-        <a href="#" class="text-dark">Contact</a>
+        <a href="/" class="text-dark me-4">Home</a>
+        <router-link to="/#about" class="text-dark me-4">About</router-link>
+        <router-link to="/products" class="text-dark me-4">Products</router-link>
+        <router-link to="/#contact" class="text-dark">Contact</router-link>
+
       </nav>
     </div>
   </header>
