@@ -4,7 +4,9 @@
     <div class="row">
       <div v-for="product in selectedCategory.products" :key="product.id" class="col-md-4 mb-4">
         <div class="card h-100">
-          <img :src="product.image" class="card-img-top" :alt="product.name">
+          <div class="card-img-container">
+            <img :src="product.image" class="card-img-top" :alt="product.name">
+          </div>
           <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
             <p class="card-text">{{ product.description }}</p>
@@ -56,6 +58,44 @@ export default {
 </script>
 
 <style scoped>
+.card {
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-container {
+  height: 200px; /* Fixed height for images */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img-top {
+  object-fit: cover; /* Ensure images maintain aspect ratio and fill the container */
+  height: 100%;
+  width: 100%;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.25rem; /* Adjust font size as needed */
+  text-align: center;
+}
+
 .product-colors {
   display: flex;
   gap: 10px;
